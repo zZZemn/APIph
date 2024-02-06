@@ -13,7 +13,7 @@ class ProvinceController extends Controller
         $regionId = $request->input('region_id');
         $provinces = Province::when($regionId, function ($query) use ($regionId) {
             $query->where('REGION_ID', $regionId);
-        })->get();
+        })->select('REGION_ID', 'PROVINCE_ID', 'PROVINCE')->get();
         return response()->json($provinces);
     }
 }

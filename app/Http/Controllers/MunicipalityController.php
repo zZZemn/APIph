@@ -13,7 +13,7 @@ class MunicipalityController extends Controller
         $provinceId = $request->input('province_id');
         $municipalities = Municipality::when($provinceId, function ($query) use ($provinceId) {
             $query->where('PROVINCE_ID', $provinceId);
-        })->get();
+        })->select('PROVINCE_ID', 'MUNICIPALITY_ID', 'MUNICIPALITY')->get();
 
         return response()->json($municipalities);
     }
