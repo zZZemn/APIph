@@ -1,0 +1,20 @@
+/* Nav Bar */
+nav div .ph-flag {
+    height: 32px;
+    width: 32px;
+}
+/* End of Nav Bar */
+
+/* Description / Welcome */
+.welcome-description-container {
+    background-color: rgba(255, 255, 255, 0.014);
+    color: rgba(255, 255, 255, 0.836);
+}
+/* End of Description / Welcome */
+
+/* Endpoints Card */
+.endpoints-main-container .card {
+    background-color: rgba(255, 255, 255, 0.014);
+    color: rgba(255, 255, 255, 0.836);
+}
+/* End of Endpoints Card */
