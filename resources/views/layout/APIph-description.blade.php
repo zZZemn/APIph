@@ -1,4 +1,5 @@
 <div class="welcome-description-container card p-5">
+    <button class="btn-close-api-description btn" id="btnCloseDescription"><i class="bi bi-x-lg"></i></button>
     <h5 class="text-center">
         <i>
             Welcome to APIph!
