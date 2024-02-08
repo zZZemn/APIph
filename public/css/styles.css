@@ -29,3 +29,10 @@ nav div .ph-flag {
     color: rgba(255, 255, 255, 0.836);
 }
 /* End of About */
+
+@media (max-width: 500px) {
+    .top-nav {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}

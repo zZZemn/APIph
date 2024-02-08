@@ -1,4 +1,4 @@
-<nav class="d-flex justify-content-between align-items-center p-5 pt-3 pb-3">
+<nav class="top-nav d-flex justify-content-between align-items-center p-5 pt-3 pb-3">
     <div class="d-flex align-items-center">
         <img class="ph-flag" src="{{ URL('img/ph-flag.png') }}" alt="Logo">
         <h4 class="text-light m-2 mt-0 mb-0">
