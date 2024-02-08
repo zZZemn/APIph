@@ -8,9 +8,17 @@ use Illuminate\Http\Request;
 
 class RegionsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $regions = Region::all();
+        $search = $request->input('search');
+        if ($search != '') {
+            $regions = Region::when($search, function ($query) use ($search) {
+                $query->where('regDesc', 'like', '%' . $search . '%');
+            })->get();
+        } else {
+            $regions = Region::all();
+        }
+
         return response()->json($regions);
     }
 }
