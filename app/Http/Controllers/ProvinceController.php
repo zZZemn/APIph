@@ -10,10 +10,10 @@ class ProvinceController extends Controller
 {
     public function index(Request $request)
     {
-        $regionId = $request->input('region_id');
+        $regionId = $request->input('region_code');
         $provinces = Province::when($regionId, function ($query) use ($regionId) {
-            $query->where('REGION_ID', $regionId);
-        })->select('REGION_ID', 'PROVINCE_ID', 'PROVINCE')->get();
+            $query->where('regCode', $regionId);
+        })->get();
         return response()->json($provinces);
     }
 }

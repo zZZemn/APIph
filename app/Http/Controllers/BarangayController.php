@@ -10,10 +10,10 @@ class BarangayController extends Controller
 {
     public function index(Request $request)
     {
-        $municipalityId = $request->input('municipality_id');
+        $municipalityId = $request->input('municipality_code');
         $Barangays = Barangay::when($municipalityId, function ($query) use ($municipalityId) {
-            $query->where('MUNICIPALITY_ID', $municipalityId);
-        })->select('MUNICIPALITY_ID', 'BARANGAY_ID', 'BARANGAY')->get();
+            $query->where('citymunCode', $municipalityId);
+        })->get();
 
         return response()->json($Barangays);
     }

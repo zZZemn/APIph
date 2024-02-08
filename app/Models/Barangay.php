@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Barangay extends Model
 {
-    protected $table = 'barangay';
+    protected $table = 'refbrgy';
     use HasFactory;
 }

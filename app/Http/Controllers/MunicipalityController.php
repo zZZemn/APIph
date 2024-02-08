@@ -10,10 +10,10 @@ class MunicipalityController extends Controller
 {
     public function index(Request $request)
     {
-        $provinceId = $request->input('province_id');
+        $provinceId = $request->input('province_code');
         $municipalities = Municipality::when($provinceId, function ($query) use ($provinceId) {
-            $query->where('PROVINCE_ID', $provinceId);
-        })->select('PROVINCE_ID', 'MUNICIPALITY_ID', 'MUNICIPALITY')->get();
+            $query->where('provCode', $provinceId);
+        })->get();
 
         return response()->json($municipalities);
     }
