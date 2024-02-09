@@ -14,7 +14,11 @@
     z-index: 100;
 }
 
-nav div .ph-flag {
+nav a {
+    text-decoration: none;
+}
+
+nav a .ph-flag {
     height: 32px;
     width: 32px;
 }
