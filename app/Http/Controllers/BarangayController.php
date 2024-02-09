@@ -11,10 +11,17 @@ class BarangayController extends Controller
     public function index(Request $request)
     {
         $municipalityId = $request->input('municipality_code');
-        $Barangays = Barangay::when($municipalityId, function ($query) use ($municipalityId) {
-            $query->where('citymunCode', $municipalityId);
-        })->get();
+        $search = $request->input('search');
+        if ($search != '') {
+            $barangays = Barangay::when($search, function ($query) use ($search) {
+                $query->where('brgyDesc', 'like', '%' . $search . '%');
+            })->get();
+        } else {
+            $barangays = Barangay::when($municipalityId, function ($query) use ($municipalityId) {
+                $query->where('citymunCode', $municipalityId);
+            })->get();
+        }
 
-        return response()->json($Barangays);
+        return response()->json($barangays);
     }
 }

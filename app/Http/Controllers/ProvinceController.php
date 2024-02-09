@@ -11,9 +11,18 @@ class ProvinceController extends Controller
     public function index(Request $request)
     {
         $regionId = $request->input('region_code');
-        $provinces = Province::when($regionId, function ($query) use ($regionId) {
-            $query->where('regCode', $regionId);
-        })->get();
+        $search = $request->input('search');
+
+        if ($search != '') {
+            $provinces = Province::when($search, function ($query) use ($search) {
+                $query->where('provDesc', 'like', '%' . $search . '%');
+            })->get();
+        } else {
+            $provinces = Province::when($regionId, function ($query) use ($regionId) {
+                $query->where('regCode', $regionId);
+            })->get();
+        }
+
         return response()->json($provinces);
     }
 }
