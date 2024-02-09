@@ -1,16 +1,28 @@
 $(document).ready(function () {
-    $("#btnCloseDescription").click(function (e) {
-        e.preventDefault();
-        $(".welcome-description-container").css(
-            "transform",
-            "translateY(-200%)"
-        );
-
-        $(".endpoints-main-container").css("opacity", "0");
+    const onLoadAnimation = () => {
+        setInterval(() => {
+            $(".welcome-description-container").css(
+                "transform",
+                "translateY(0)"
+            );
+        }, 100);
 
         setInterval(() => {
-            $(".welcome-description-container").hide();
-            $(".endpoints-main-container").css("opacity", "1");
+            $(".welcome-description-container, .abouts-container").css(
+                "opacity",
+                "1"
+            );
         }, 400);
+
+        setInterval(() => {
+            $(".endpoints-main-container").css("transform", "translateY(0)");
+        }, 400);
+    };
+
+    $("#btnCloseDescription").click(function (e) {
+        e.preventDefault();
+        $(".welcome-description-container").hide();
     });
+
+    onLoadAnimation();
 });
