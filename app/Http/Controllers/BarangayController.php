@@ -10,11 +10,21 @@ class BarangayController extends Controller
 {
     public function index(Request $request)
     {
+        $regionId = $request->input('region_code');
+        $provinceId = $request->input('province_code');
         $municipalityId = $request->input('municipality_code');
         $search = $request->input('search');
         if ($search != '') {
             $barangays = Barangay::when($search, function ($query) use ($search) {
                 $query->where('brgyDesc', 'like', '%' . $search . '%');
+            })->get();
+        } elseif ($regionId != '') {
+            $barangays = Barangay::when($regionId, function ($query) use ($regionId) {
+                $query->where('regCode', $regionId);
+            })->get();
+        } elseif ($provinceId != '') {
+            $barangays = Barangay::when($provinceId, function ($query) use ($provinceId) {
+                $query->where('provCode', $provinceId);
             })->get();
         } else {
             $barangays = Barangay::when($municipalityId, function ($query) use ($municipalityId) {

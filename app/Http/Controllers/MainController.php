@@ -80,6 +80,16 @@ class MainController extends Controller
                         'url' => 'http://127.0.0.1:8000/api/barangays'
                     ],
                     [
+                        'description' => 'Retrieve all municipalities in the Philippines from specific region.',
+                        'request_method' => 'GET',
+                        'url' => 'http://127.0.0.1:8000/api/barangays?region_code='
+                    ],
+                    [
+                        'description' => 'Retrieve all municipalities in the Philippines from specific province.',
+                        'request_method' => 'GET',
+                        'url' => 'http://127.0.0.1:8000/api/barangays?province_code='
+                    ],
+                    [
                         'description' => 'Retrieve all municipalities in the Philippines from specific municipality.',
                         'request_method' => 'GET',
                         'url' => 'http://127.0.0.1:8000/api/barangays?municipality_code='
