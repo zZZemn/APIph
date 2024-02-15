@@ -8,5 +8,6 @@
     <div>
         <a href="/" class="text-decoration-none text-secondary m-3 mt-0 mb-0">Home</a>
         <a href="/about" class="text-decoration-none text-secondary m-3 mt-0 mb-0">About</a>
+        <a href="/test" class="text-decoration-none text-secondary m-3 mt-0 mb-0">Test</a>
     </div>
 </nav>

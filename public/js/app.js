@@ -49,5 +49,15 @@ $(document).ready(function () {
         copyToClipboard($(this).data("url"));
     });
 
+    $("#btnCopyRespose").click(function (e) {
+        e.preventDefault();
+        copyToClipboard($("#txtResponse").val());
+    });
+
+    $("#btnClearRespose").click(function (e) {
+        e.preventDefault();
+        $("#txtResponse").val("");
+    });
+
     functionCall();
 });

@@ -63,6 +63,16 @@ nav a .ph-flag {
 }
 /* End of About */
 
+/* Test */
+.test-container {
+    max-width: 600px;
+}
+
+#testUrl::placeholder {
+    color: rgb(138, 138, 138);
+}
+/* End of Test */
+
 @media (max-width: 500px) {
     .top-nav {
         padding-left: 10px !important;
