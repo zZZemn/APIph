@@ -57,6 +57,7 @@ $(document).ready(function () {
     $("#btnClearRespose").click(function (e) {
         e.preventDefault();
         $("#txtResponse").val("");
+        $("#testUrl").val("");
     });
 
     $("#frmSendRequest").submit(function (e) {
@@ -73,8 +74,7 @@ $(document).ready(function () {
                 $("#txtResponse").val(JSON.stringify(response, null, 2));
             },
             error: function (xhr, status, error) {
-                console.error("Error:", xhr.responseText);
-                $("#txtResponse").val("Error: " + xhr.responseText);
+                $("#txtResponse").val("Error: Not Found");
             },
         });
     });

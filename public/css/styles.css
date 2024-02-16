@@ -55,6 +55,10 @@ nav a .ph-flag {
 .endpoints-main-container {
     transition: all 0.3s;
 }
+
+.btn-request-method {
+    pointer-events: none;
+}
 /* End of Endpoints Card */
 
 /* About */

@@ -10,6 +10,7 @@ class MainController extends Controller
 {
     public function index()
     {
+        $url = "http://127.0.0.1:8000/api/";
         $endPoints = [
             'region' => [
                 'title' => 'Get Regions',
@@ -17,12 +18,12 @@ class MainController extends Controller
                     [
                         'description' => 'Retrieve all regions in the Philippines.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/regions'
+                        'url' => $url.'regions'
                     ],
                     [
                         'description' => 'Search regions in the Philippines.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/regions?search='
+                        'url' => $url.'regions?search='
                     ],
                 ]
             ],
@@ -32,17 +33,17 @@ class MainController extends Controller
                     [
                         'description' => 'Retrieve all provinces in the Philippines.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/provinces'
+                        'url' => $url.'provinces'
                     ],
                     [
                         'description' => 'Retrieve all provinces in the Philippines from specific region.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/provinces?region_code='
+                        'url' => $url.'provinces?region_code='
                     ],
                     [
                         'description' => 'Search provinces in the Philippines.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/provinces?search='
+                        'url' => $url.'provinces?search='
                     ],
                 ]
             ],
@@ -52,22 +53,22 @@ class MainController extends Controller
                     [
                         'description' => 'Retrieve all municipalities in the Philippines.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/municipalities'
+                        'url' => $url.'municipalities'
                     ],
                     [
                         'description' => 'Retrieve all municipalities in the Philippines from specific region.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/municipalities?region_code='
+                        'url' => $url.'municipalities?region_code='
                     ],
                     [
                         'description' => 'Retrieve all municipalities in the Philippines from specific province.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/municipalities?province_code='
+                        'url' => $url.'municipalities?province_code='
                     ],
                     [
                         'description' => 'Search municipalities in the Philippines.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/municipalities?search='
+                        'url' => $url.'municipalities?search='
                     ],
                 ]
             ],
@@ -77,27 +78,27 @@ class MainController extends Controller
                     [
                         'description' => 'Retrieve all barangays in the Philippines.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/barangays'
+                        'url' => $url.'barangays'
                     ],
                     [
                         'description' => 'Retrieve all municipalities in the Philippines from specific region.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/barangays?region_code='
+                        'url' => $url.'barangays?region_code='
                     ],
                     [
                         'description' => 'Retrieve all municipalities in the Philippines from specific province.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/barangays?province_code='
+                        'url' => $url.'barangays?province_code='
                     ],
                     [
                         'description' => 'Retrieve all municipalities in the Philippines from specific municipality.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/barangays?municipality_code='
+                        'url' => $url.'barangays?municipality_code='
                     ],
                     [
                         'description' => 'Search barangays in the Philippines.',
                         'request_method' => 'GET',
-                        'url' => 'http://127.0.0.1:8000/api/barangays?search='
+                        'url' => $url.'barangays?search='
                     ],
                 ]
             ]
