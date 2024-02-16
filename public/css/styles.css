@@ -75,6 +75,10 @@ nav a .ph-flag {
 #txtResponse {
     font-size: 10px;
 }
+
+.text-title {
+    color: rgba(255, 255, 255, 0.836);
+}
 /* End of Test */
 
 @media (max-width: 500px) {
