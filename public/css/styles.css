@@ -71,6 +71,10 @@ nav a .ph-flag {
 #testUrl::placeholder {
     color: rgb(138, 138, 138);
 }
+
+#txtResponse {
+    font-size: 10px;
+}
 /* End of Test */
 
 @media (max-width: 500px) {

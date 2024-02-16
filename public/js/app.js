@@ -59,5 +59,25 @@ $(document).ready(function () {
         $("#txtResponse").val("");
     });
 
+    $("#frmSendRequest").submit(function (e) {
+        e.preventDefault();
+        var requestMethod = $("#requestMethod").val();
+        var url = $("#testUrl").val();
+        $.ajax({
+            type: requestMethod,
+            url: url,
+            dataType: "json",
+            contentType: "application/json",
+            data: {},
+            success: function (response) {
+                $("#txtResponse").val(JSON.stringify(response, null, 2));
+            },
+            error: function (xhr, status, error) {
+                console.error("Error:", xhr.responseText);
+                $("#txtResponse").val("Error: " + xhr.responseText);
+            },
+        });
+    });
+
     functionCall();
 });
