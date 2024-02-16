@@ -19,6 +19,13 @@ class RegionsController extends Controller
             $regions = Region::all();
         }
 
+        if ($regions->isEmpty()) {
+            $regions = [
+                "status" => 404,
+                "message" => "No result found!"
+            ];
+        }
+
         return response()->json($regions);
     }
 }

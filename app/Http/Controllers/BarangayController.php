@@ -32,6 +32,13 @@ class BarangayController extends Controller
             })->get();
         }
 
+        if ($barangays->isEmpty()) {
+            $barangays = [
+                "status" => 404,
+                "message" => "No result found!"
+            ];
+        }
+
         return response()->json($barangays);
     }
 }

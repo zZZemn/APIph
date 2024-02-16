@@ -23,6 +23,13 @@ class ProvinceController extends Controller
             })->get();
         }
 
+        if ($provinces->isEmpty()) {
+            $provinces = [
+                "status" => 404,
+                "message" => "No result found!"
+            ];
+        }
+
         return response()->json($provinces);
     }
 }

@@ -29,6 +29,13 @@ class MunicipalityController extends Controller
             })->get();
         }
 
+        if ($municipalities->isEmpty()) {
+            $municipalities = [
+                "status" => 404,
+                "message" => "No result found!"
+            ];
+        }
+
         return response()->json($municipalities);
     }
 }
