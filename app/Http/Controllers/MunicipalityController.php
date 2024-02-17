@@ -17,16 +17,28 @@ class MunicipalityController extends Controller
         $search = $request->input('search');
         if ($search != '') {
             $municipalities = Municipality::when($search, function ($query) use ($search) {
-                $query->where('citymunDesc', $search);
-            })->get();
+                $query->where('refcitymun.citymunDesc', 'like', '%'.$search.'%');
+            })
+                ->join('refprovince', 'refcitymun.provCode', '=', 'refprovince.provCode')
+                ->join('refregion', 'refcitymun.regDesc', '=', 'refregion.regCode')
+                ->select('refcitymun.*', 'refprovince.provDesc', 'refregion.regDesc')
+                ->get();
         } elseif ($regionId != '') {
             $municipalities = Municipality::when($regionId, function ($query) use ($regionId) {
-                $query->where('regDesc', $regionId);
-            })->get();
+                $query->where('refcitymun.regDesc', $regionId);
+            })
+                ->join('refprovince', 'refcitymun.provCode', '=', 'refprovince.provCode')
+                ->join('refregion', 'refcitymun.regDesc', '=', 'refregion.regCode')
+                ->select('refcitymun.*', 'refprovince.provDesc', 'refregion.regDesc')
+                ->get();
         } else {
             $municipalities = Municipality::when($provinceId, function ($query) use ($provinceId) {
-                $query->where('provCode', $provinceId);
-            })->get();
+                $query->where('refcitymun.provCode', $provinceId);
+            })
+                ->join('refprovince', 'refcitymun.provCode', '=', 'refprovince.provCode')
+                ->join('refregion', 'refcitymun.regDesc', '=', 'refregion.regCode')
+                ->select('refcitymun.*', 'refprovince.provDesc', 'refregion.regDesc')
+                ->get();
         }
 
         if ($municipalities->isEmpty()) {
