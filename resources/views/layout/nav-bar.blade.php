@@ -5,7 +5,7 @@
             APIph
         </h4>
     </a>
-    <div>
+    <div class="nav-links-container">
         <a href="/" class="text-decoration-none text-secondary m-3 mt-0 mb-0">Home</a>
         <a href="/about" class="text-decoration-none text-secondary m-3 mt-0 mb-0">About</a>
         <a href="/test" class="text-decoration-none text-secondary m-3 mt-0 mb-0">Test</a>

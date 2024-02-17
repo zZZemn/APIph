@@ -69,7 +69,7 @@ nav a .ph-flag {
 
 /* Test */
 .test-container {
-    max-width: 600px;
+    max-width: 800px;
 }
 
 #testUrl::placeholder {
@@ -82,6 +82,10 @@ nav a .ph-flag {
 
 .text-title {
     color: rgba(255, 255, 255, 0.836);
+}
+
+.test-page-btn {
+    font-size: 14px;
 }
 /* End of Test */
 
@@ -109,4 +113,19 @@ nav a .ph-flag {
         font-size: 13px;
     }
     /* End of Endpoints */
+
+    /* Test */
+    .input-url-container {
+        flex-wrap: wrap;
+    }
+
+    .input-url-container div {
+        margin: 0 !important;
+        margin-top: 7px !important;
+    }
+
+    .test-page-btn {
+        font-size: 12px;
+    }
+    /* End of Test */
 }
