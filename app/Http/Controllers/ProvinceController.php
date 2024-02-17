@@ -15,12 +15,18 @@ class ProvinceController extends Controller
 
         if ($search != '') {
             $provinces = Province::when($search, function ($query) use ($search) {
-                $query->where('provDesc', 'like', '%' . $search . '%');
-            })->get();
+                $query->where('refprovince.provDesc', 'like', '%' . $search . '%');
+            })
+                ->join('refregion', 'refprovince.regCode', '=', 'refregion.regCode')
+                ->select('refprovince.*', 'refregion.regDesc')
+                ->get();
         } else {
             $provinces = Province::when($regionId, function ($query) use ($regionId) {
-                $query->where('regCode', $regionId);
-            })->get();
+                $query->where('refprovince.regCode', $regionId);
+            })
+                ->join('refregion', 'refprovince.regCode', '=', 'refregion.regCode')
+                ->select('refprovince.*', 'refregion.regDesc')
+                ->get();
         }
 
         if ($provinces->isEmpty()) {
