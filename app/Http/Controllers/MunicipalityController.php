@@ -21,7 +21,7 @@ class MunicipalityController extends Controller
             })
                 ->join('refprovince', 'refcitymun.provCode', '=', 'refprovince.provCode')
                 ->join('refregion', 'refcitymun.regDesc', '=', 'refregion.regCode')
-                ->select('refcitymun.*', 'refprovince.provDesc', 'refregion.regDesc')
+                ->select('refcitymun.citymunCode', 'refcitymun.citymunDesc','refprovince.provDesc', 'refregion.regDesc')
                 ->get();
         } elseif ($regionId != '') {
             $municipalities = Municipality::when($regionId, function ($query) use ($regionId) {
@@ -29,7 +29,7 @@ class MunicipalityController extends Controller
             })
                 ->join('refprovince', 'refcitymun.provCode', '=', 'refprovince.provCode')
                 ->join('refregion', 'refcitymun.regDesc', '=', 'refregion.regCode')
-                ->select('refcitymun.*', 'refprovince.provDesc', 'refregion.regDesc')
+                ->select('refcitymun.citymunCode', 'refcitymun.citymunDesc','refprovince.provDesc', 'refregion.regDesc')
                 ->get();
         } else {
             $municipalities = Municipality::when($provinceId, function ($query) use ($provinceId) {
@@ -37,7 +37,7 @@ class MunicipalityController extends Controller
             })
                 ->join('refprovince', 'refcitymun.provCode', '=', 'refprovince.provCode')
                 ->join('refregion', 'refcitymun.regDesc', '=', 'refregion.regCode')
-                ->select('refcitymun.*', 'refprovince.provDesc', 'refregion.regDesc')
+                ->select('refcitymun.citymunCode', 'refcitymun.citymunDesc','refprovince.provDesc', 'refregion.regDesc')
                 ->get();
         }
 
