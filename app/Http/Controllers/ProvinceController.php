@@ -18,14 +18,14 @@ class ProvinceController extends Controller
                 $query->where('refprovince.provDesc', 'like', '%' . $search . '%');
             })
                 ->join('refregion', 'refprovince.regCode', '=', 'refregion.regCode')
-                ->select('refprovince.*', 'refregion.regDesc')
+                ->select('refprovince.provCode', 'refprovince.provDesc','refregion.regDesc')
                 ->get();
         } else {
             $provinces = Province::when($regionId, function ($query) use ($regionId) {
                 $query->where('refprovince.regCode', $regionId);
             })
                 ->join('refregion', 'refprovince.regCode', '=', 'refregion.regCode')
-                ->select('refprovince.*', 'refregion.regDesc')
+                ->select('refprovince.provCode', 'refprovince.provDesc','refregion.regDesc')
                 ->get();
         }
 
