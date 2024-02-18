@@ -10,7 +10,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $url = "http://127.0.0.1:8000/api/";
+        $url = "http://127.0.0.1:8001/api/";
         $endPoints = [
             'region' => [
                 'title' => 'Get Regions',
