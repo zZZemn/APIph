@@ -13,6 +13,7 @@
     <link rel="shortcut icon" href="{{ URL('img/ph-flag.png') }}" type="image/x-icon">
 </head>
 
+<div class="alert mt-5 text-center"></div>
 <body class="bg-dark">
     @include('layout.nav-bar')
     @yield('content')

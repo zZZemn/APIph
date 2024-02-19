@@ -6,6 +6,15 @@
     color: rgba(255, 255, 255, 0.836);
 }
 
+.alert {
+    position: fixed;
+    z-index: 10000;
+    pointer-events: none;
+    max-width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /* Opacity To 0 When page reload / Animations */
 .welcome-description-container {
     transform: translateY(-200%);

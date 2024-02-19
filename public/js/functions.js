@@ -1,9 +1,6 @@
 const onLoadAnimation = () => {
     setInterval(() => {
-        $(".welcome-description-container").css(
-            "transform",
-            "translateY(0)"
-        );
+        $(".welcome-description-container").css("transform", "translateY(0)");
     }, 100);
 
     setInterval(() => {
@@ -18,6 +15,13 @@ const onLoadAnimation = () => {
     }, 400);
 };
 
+const alert = (alertType, message) => {
+    $(".alert").addClass(alertType).text(message);
+    setInterval(() => {
+        $(".alert").removeClass(alertType).text("");
+    }, 2000);
+};
+
 const copyToClipboard = (text) => {
     const tempTextArea = document.createElement("textarea");
     tempTextArea.value = text;
@@ -30,7 +34,7 @@ const copyToClipboard = (text) => {
 
     document.body.removeChild(tempTextArea);
 
-    alert("Copied to clipboard: " + text);
+    alert("alert-success", "Copied to clipboard");
 };
 
 const pasteFromClipboard = (targetId) => {
